@@ -1,33 +1,38 @@
+while True:  
+    try:  
+        text1 = input()  
+        text2 = input()  
+    except EOFError:  
+        break  
+  
 
-# LINK : https://judge.beecrowd.com/pt/problems/view/1237
+    if len(text1) <= len(text2):  
+        shorter, larger = text1, text2  
+    else:  
+        shorter, larger = text2, text1  
+  
+    shorterLenght = len(shorter)  
+    largerLenght = len(larger)  
+  
+    ans = 0  
 
-while True:
-    try:
-        text1 = input()
-        text2 = input()
-    except EOFError:
-        break
+    c = shorterLenght  
+    found = False  
+    while c > 0 and not found:  
 
-    
-    shorter = ''
-    lenght = 0
-    solution = ''
-    if len(text1) > len(text2):
-        shorter, longer = text2, text1
-    elif len(text2) >= len(text1):    
-        shorter, longer = text1, text2
+        subs = set()  
+        limit_s = shorterLenght - c + 1  
+        for i in range(limit_s):  
+            subs.add(shorter[i:i+c])  
+  
 
-    for i in range(len(shorter)):
-        for j in range(len(shorter)+1):
-            comp = shorter[i:j]
-
-            if (comp in longer) and (lenght <= len(comp)):
-                print(comp)
-                solution = comp
-                lenght = len(comp)
-    
-    print(f'{len(solution)}')
-
-    
-
-# Autor: Leonardo Amorim de Araujo || Github: https://github.com/Leow14
+        limit_t = largerLenght - c + 1  
+        for j in range(limit_t):  
+            if larger[j:j+c] in subs:  
+                ans = c  
+                found = True  
+                break  
+  
+        c -= 1  
+  
+    print(ans)
