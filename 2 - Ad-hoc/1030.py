@@ -7,7 +7,7 @@ while i < num_testes:
     nk = list(map(int, input().split()))
     homens = [x for x in range(1, nk[0]+1)]
 
-    idx = 0
+    
 
     while len(homens) > 1:
         idx = (idx + nk[1] - 1) % len(homens)    
