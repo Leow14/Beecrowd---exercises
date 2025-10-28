@@ -1,7 +1,7 @@
 while True:  
     try:  
-        text1 = input()  
-        text2 = input()  
+        text1 = input()
+        text2 = input()
     except EOFError:  
         break  
   

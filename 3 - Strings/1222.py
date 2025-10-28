@@ -17,9 +17,7 @@ while True:
     text = input().split()
 
     for words in text:
-
         for letters in words:
-            
             if sum_char >= max_char:
                 sum_lines += 1
                 sum_char = 0
