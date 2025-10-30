@@ -1,8 +1,8 @@
+import math
+
 def gerar_primos(n):
     if n <= 0:
         return []
-
-    import math
     limite = max(15, int(n * (math.log(n) + math.log(math.log(n))) + 100)) if n >= 6 else 15
 
     crivo = [True] * (limite + 1)
@@ -17,6 +17,6 @@ def gerar_primos(n):
 
 
 # Exemplo de uso
-n = 5
+n = 15
 lista = gerar_primos(n)
 print(lista)  # [2, 3, 5, 7, 11]
