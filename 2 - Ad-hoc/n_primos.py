@@ -27,21 +27,8 @@ def criar_lista_primos(size):
         number += 1
     
     return lista
+        
 
-while True:
-    n = int(input())
-    if n == 0:
-        break
+_list = criar_lista_primos(20)
 
-    n_list = [x for x in range(1, n+1)]
-    prime_list = criar_lista_primos(n)
-    #print(n_list, prime_list)
-    prime_index = 0
-    idx = 0
-
-    while len(n_list) > 1:
-        idx = (idx + prime_list[prime_index] - 1) % len(n_list)
-        n_list.pop(idx)
-        prime_index += 1
-    
-    print(n_list[0])
+print(_list)
